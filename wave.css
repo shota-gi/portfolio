@@ -1,0 +1,37 @@
+@charset "UTF-8";
+.wave {
+  /*波紋の基点とするためrelativeを指定*/
+  position: relative;
+  /*リンクの形状*/
+}
+
+.wave::after {
+  content: '';
+  /*絶対配置で波形の位置を決める*/
+  position: absolute;
+  /*波形の形状*/
+  border: 5px solid #a0a0a0;
+  width: 100%;
+  height: 100%;
+  top: -3px;
+  left: -3px;
+  border-radius: 10px;
+  -webkit-transform: scale(1.15);
+          transform: scale(1.15);
+  /*はじめは不透明*/
+  opacity: 0;
+  /*アニメーションの設定*/
+  -webkit-transition: opacity 0.6s, -webkit-transform .2s;
+  transition: opacity 0.6s, -webkit-transform .2s;
+  transition: transform .2s, opacity 0.6s;
+  transition: transform .2s, opacity 0.6s, -webkit-transform .2s;
+}
+
+.wave:active::after {
+  -webkit-transform: scale(0);
+          transform: scale(0);
+  -webkit-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+}
+/*# sourceMappingURL=wave.css.map */

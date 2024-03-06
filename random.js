@@ -1,0 +1,1 @@
+document.addEventListener("DOMContentLoaded",function(){document.querySelectorAll(".rand").forEach(function(n){var t=-5*Math.random(),a=Math.random()+2;n.style.animationDelay=t+"s",n.style.animationDuration=a+"s"})});
